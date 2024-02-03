@@ -16,7 +16,7 @@
     <title>Météo</title>
   </head>
   <body>
-    <div id="header" class="shadow-md grid grid-cols-7 p-4">
+    <header id="header" class="shadow-md grid grid-cols-7 p-4 h-[60px]">
       <div class="col-span-2"></div>
       <div class="col-span-3 px-2 space-x-4 flex justify-center">
         <label>Ville</label>
@@ -25,25 +25,57 @@
           name="ville"
           id="villeInput"
           class="rounded-md border-2 border-slate-600 px-2"
-          
         />
       </div>
       <div class="col-span-2"></div>
-    </div>
-    <div class="vh-100 vw-100 overflow-hidden p-8">
-      <div class="grid grdi-cols-4">
-        <div class="col-span-4 flex flex-col items-center">
+    </header>
+    <main
+      class="vh-100 vw-100 overflow-hidden p-8 bg-[#cccccc] h-[calc(100vh-60px)]"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-x-4 space-y-8"
+      >
+        <div
+          class="col-span-1 md:cols-span-2 lg:col-span-4 flex flex-col items-center"
+        >
           <div
-            class="w-[100px] h-[100px] rounded-full shadow-xl flex justify-center items-center"
+            class="w-[100px] h-[100px] rounded-full shadow-xl flex justify-center items-center bg-white"
             id="icone"
           >
             <span class="material-symbols-outlined text-6xl"></span>
           </div>
           <div id="cityName">Veuillez insérer le nom d'une ville</div>
         </div>
+        <div class="rounded-md shadow-lg bg-white h-64 p-4">
+          <h2 id="city2" class="text-4xl font-bold"></h2>
+          <div class="p-4">
+            <h5 class="font-bold">Coordonées</h5>
+            <h6>Longitude:</h6>
+            <div id="lon"></div>
+            <h6>Latitude:</h6>
+            <div id="lat"></div>
+          </div>
+        </div>
+        <div class="rounded-md shadow-lg bg-white h-64 p-4">
+          <h2 class="text-4xl font-bold">Température</h2>
+          <div class="grid grid-cols-2">
+            <div>
+              <h6>Température:</h6>
+            </div>
+            <div id="temp"></div>
+            <div><h6>Ressenti:</h6></div>
+            <div id="ressenti"></div>
+            <div><h6>Minimale:</h6></div>
+            <div id="min"></div>
+            <div><h6>Maximale:</h6></div>
+            <div id="max"></div>
+          </div>
+        </div>
+        <div class="rounded-md shadow-lg bg-white h-64"></div>
+        <div class="rounded-md shadow-lg bg-white h-64"></div>
       </div>
-    </div>
-
+    </main>
+    <footer></footer>
     <script type="module" src="./index.js"></script>
   </body>
 </html>

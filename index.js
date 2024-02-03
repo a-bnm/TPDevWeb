@@ -34,6 +34,17 @@ function chercherVille() {
 
         const nameDiv = document.querySelector("#cityName");
         nameDiv.textContent = data.name;
+
+        const nameDiv2 = document.querySelector("#city2");
+        nameDiv2.textContent = data.name + "," + data.sys.country;
+        const lon = document.querySelector("#lon");
+        lon.textContent = data.coord.lon;
+        const lat = document.querySelector("#lat");
+        lat.textContent = data.coord.lat;
+        const temp = document.querySelector("#temp");
+        temp.textContent = data.main.temp;
+        const ressenti = document.querySelector("#ressenti");
+        ressenti.textContent = data.main.feels_like;
       })
       .catch((error) => {
         console.error("Lerreur est : \n" + error);
